@@ -88,6 +88,7 @@ margin:5% 0 0 10%;
   background:green;
   color:white;
   outline: green;
+  cursor: pointer;
 }
 .jumpList{
   font-weight: bolder;
