@@ -62,13 +62,13 @@ body {
   }
   .x{color:red;}
   .o{margin-right:10px;}
-  .nav-bar{display:flex;width:100%;}
+  .nav-bar{display:flex;width:99%;}
 .title{display:flex;width:90%;}
 .author{
     font-size:10px;
     font-style: italic;
     padding-top:25px;
-    padding-left:50px;;
+    padding-left:40px;;
 }
 .game{display:flex;width:100%;height:100%;}
 .game-board{width:50%;
