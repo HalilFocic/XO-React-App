@@ -54,6 +54,7 @@ class Board extends React.Component {
             xIsNext:true,
             stepNumber:0,
         }
+
     }
     handleClick(i){
         console.log(this.state.styles);
