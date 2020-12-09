@@ -1,9 +1,24 @@
 import React,{Component} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+class Navbar extends Component{
+  render(){
+      return(
+          <div className="nav-bar">
+              XO Game
+          </div>
+      );
+  }
+}
+function Winner(props){
+  return(
+    <div className="winner">{props.winner}</div>
+  )
+}
 function Square(props) {
     return (
-      <button className="square" style={{backgroundColor:props.styles}}
+      <button className="square" style={{backgroundColor:(props.styles==="green"?props.styles:"rgba(100,100,100,0.1)")}}
       onClick={props.onClick}>
         {props.value}
       </button>
@@ -23,7 +38,7 @@ class Board extends React.Component {
   
     render() {
       return (
-        <div>
+        <div className="board">
           <div className="board-row">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
@@ -94,9 +109,7 @@ class Board extends React.Component {
                     <button  className="jumpButton" onClick={()=>this.jumpTo(move)}>{desc}</button>
                 </li>
             );
-        })
-        
-        
+        }) 
         let status;
         if(winner.winner){
             status="Winner:" +winner.winner;
@@ -110,6 +123,7 @@ class Board extends React.Component {
         }
       return (
         <div className="game">
+          <div className="content">
           <div className="game-board">
             <Board 
             squares={current.squares}
@@ -118,9 +132,11 @@ class Board extends React.Component {
             />
           </div>
           <div className="game-info">
-            <div className="status">{status}</div>
+            <div className={winner.winner?"statusOff":"status"}>{status}</div>
             <ol>{moves}</ol>
           </div>
+          </div>
+          {(winner.winner?<Winner winner={status}/>:null)}
         </div>
       );
     }
@@ -145,20 +161,6 @@ function calculateWinner(squares) {
     }
     return {winner:null,lines:null};
   }
-class Navbar extends Component{
-    render(){
-        return(
-            <div className="nav-bar">
-                <div className="title">
-                <div className="x">X</div>
-                <div className="o">O</div>
-                game
-                </div>
-                <span className="author">by Halil Fočić</span>
-            </div>
-        );
-    }
-}
 class App extends Component{
     render(){
         return(

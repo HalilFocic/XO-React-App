@@ -2,80 +2,54 @@
     margin:0;
     padding:0;
 }
-body {
+body,html {
     font: 14px "Century Gothic", Futura, sans-serif;
-  }
-  
-  ol, ul {
-    padding-left: 30px;
-  }
-  
-  .board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-  }
-  
-  .status {
-    margin-bottom: 30px;
-    font-size:50px;
-    font-weight: bolder;
-  }
-  
-  .square {
-    border: 3px solid rgb(0, 0, 0);
-    float: left;
-    font-size: 70px;
-    font-weight: bold;
-    line-height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    height: 130px;
-    width: 130px;
-    border-radius:10px;
-  }
-  
-  .square:focus {
-    outline: none;
-  }
-  
-  .kbd-navigation .square:focus {
-    background: #ddd;
-  }
-  
-  .game {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .game-info {
-    margin-left: 20px;
-  }
-  .nav-bar{
-      background:rgb(212, 202, 202);
-      font-weight: bolder;
-      font-size: 30px;
-      padding:0.5%;
-    display:flex;
-  }
-  .x{color:red;}
-  .o{margin-right:10px;}
-  .nav-bar{display:flex;width:99%;}
-.title{display:flex;width:90%;}
-.author{
-    font-size:10px;
-    font-style: italic;
-    padding-top:25px;
-    padding-left:40px;;
+    background:url('./xobackground.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
 }
-.game{display:flex;width:100%;height:100%;}
-.game-board{width:50%;
-margin:5% 0 0 10%;
+.app{width:100%;height:100%;}
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
 }
-.game-info{width:50%;
+.status {
+  color:white;
+  margin-bottom: 30px;
+  font-size:50px;
+  font-weight: bolder;
+}
+.statusOff{
+  opacity:0;
+  margin-bottom: 30px;
+  font-size:50px;
+  font-weight: bolder;
+}
+.statusOff{opacity: 0;}
+.winner{
+  color:white;
   margin-top:5%;
+  width:100%;
+  text-align: center;
+  font-size:50px;
+}
+.square{
+  border: 1px solid rgb(255,255,255,0.5);
+  float: left;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 34px;
+  padding: 0;
+  text-align: center;
+  height: 130px;
+  width: 130px;
+  margin:0.7%;
+  border-radius:5px;
+  color:white;
+}
+.square:focus{
+  outline: none;
 }
 .jumpButton{
   height:30px;
@@ -86,7 +60,7 @@ margin:5% 0 0 10%;
 }
 .jumpButton:hover{
   background:green;
-  color:white;
+  color:rgb(255, 255, 255);
   outline: green;
   cursor: pointer;
 }
@@ -94,3 +68,28 @@ margin:5% 0 0 10%;
   font-weight: bolder;
   margin-top:10px;
 }
+.content{display:flex}
+.game-board{
+  width:50%;
+  display:inline-block;
+  box-sizing: border-box;
+  padding-left:10%;
+  padding-top:5%;
+}
+.game-info{
+  padding-top:5%;
+  box-sizing: border-box;
+  display:inline-block;
+  width:50%;
+}
+.nav-bar{
+  background:rgba(17, 17, 17, 0.774);
+  font-weight: bolder;
+  font-size: 30px;
+  padding:0.5%;
+  width:99%;
+  text-align: center;
+  color:rgba(255,255,255,0.9);
+  font-family: 'Times New Roman', Times, serif;
+}
+
