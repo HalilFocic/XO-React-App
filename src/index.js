@@ -6,7 +6,7 @@ class Navbar extends Component{
   render(){
       return(
           <div className="nav-bar">
-              XO Game
+             XO Game 
           </div>
       );
   }
@@ -133,7 +133,7 @@ class Board extends React.Component {
           </div>
           <div className="game-info">
             <div className={winner.winner?"statusOff":"status"}>{status}</div>
-            <ol>{moves}</ol>
+            <ol className="moves">{moves}</ol>
           </div>
           </div>
           {(winner.winner?<Winner winner={status}/>:null)}
