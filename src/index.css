@@ -1,61 +1,64 @@
-*{
-    margin:0;
-    padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
-body,html {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    font-family: monospace;
-
-    background:url('./xobackground.jpg');
-    background-size:cover;
-    background-repeat:no-repeat;
+body,
+html {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  font-family: monospace;
+  background: url("./xobackground.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.app{width:100%;height:100%;}
+.app {
+  width: 100%;
+  height: 100%;
+}
 .board-row:after {
   clear: both;
   content: "";
   display: table;
 }
-.moves{
-  color:white;
+.moves {
+  color: white;
 }
 .status {
-  color:white;
+  color: white;
   margin-bottom: 30px;
-  font-size:50px;
+  font-size: 50px;
   font-weight: bolder;
-  background:rgba(17, 17, 17, 0.774);
-  border:2px solid grey;
-  border-radius:20px;
-  width:60%;
-  height:15%;
-  text-align:center;
-
-}
-.statusOff{
-  opacity:0;
-  margin-bottom: 30px;
-  font-size:50px;
-  font-weight: bolder;
-}
-.statusOff{opacity: 0;}
-.winner{
-  background:rgba(17, 17, 17, 0.774);
-  border:2px solid grey;
-  color:white;
-  margin-top:5%;
-  width:100%;
+  background: rgba(17, 17, 17, 0.774);
+  border: 2px solid grey;
+  border-radius: 20px;
+  width: 60%;
+  height: 15%;
   text-align: center;
-  font-size:50px;
-  width:50%;
-  margin-left:auto;
-  margin-right:auto;
-  border-radius:20px;
-  font-weight: bolder;
-
 }
-.square{
-  border: 1px solid rgb(255,255,255,0.5);
+.statusOff {
+  opacity: 0;
+  margin-bottom: 30px;
+  font-size: 50px;
+  font-weight: bolder;
+}
+.statusOff {
+  opacity: 0;
+}
+.winner {
+  background: rgba(17, 17, 17, 0.774);
+  border: 2px solid grey;
+  color: white;
+  margin-top: 5%;
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  font-weight: bolder;
+}
+.square {
+  border: 1px solid rgb(255, 255, 255, 0.5);
   float: left;
   font-size: 70px;
   font-weight: bold;
@@ -64,57 +67,121 @@ body,html {
   text-align: center;
   height: 130px;
   width: 130px;
-  margin:0.7%;
-  border-radius:5px;
-  color:white;
+  margin: 0.7%;
+  border-radius: 5px;
+  color: white;
 }
-.square:focus{
+.square:focus {
   outline: none;
 }
-.jumpButton{
-  background:rgba(17, 17, 17, 0.774);
-  border:0;
-  color:white;
-  height:30px;
-  width:150px;
-  padding:2px;
-  margin-left:10px;
+.jumpButton {
+  background: rgba(17, 17, 17, 0.774);
+  border: 0;
+  color: white;
+  height: 30px;
+  width: 150px;
+  padding: 2px;
+  margin-left: 10px;
   font-weight: bolder;
 }
-.jumpButton:hover{
-  background:rgba(255,255,255,0.7);
-  color:black;
+.jumpButton:hover {
+  background: rgba(255, 255, 255, 0.7);
+  color: black;
   outline: green;
   cursor: pointer;
 }
-.jumpList{
+.jumpList {
   font-weight: bolder;
-  margin-top:10px;
+  margin-top: 10px;
 }
-.content{display:flex}
-.game-board{
-  width:50%;
-  display:inline-block;
+.content {
+  display: flex;
+}
+.game-board {
+  width: 50%;
+  display: inline-block;
   box-sizing: border-box;
-  padding-left:10%;
-  padding-top:5%;
+  padding-left: 10%;
+  padding-top: 5%;
 }
-.game-info{
-  padding-top:5%;
+.game-info {
+  padding-top: 5%;
   box-sizing: border-box;
-  display:inline-block;
-  width:50%;
+  display: inline-block;
+  width: 50%;
 }
-.nav-bar{
-  background:rgba(17, 17, 17, 0.774);
+.nav-bar {
+  background: rgba(17, 17, 17, 0.774);
   font-weight: bolder;
   font-size: 30px;
-  padding:0.5%;
-  width:99%;
+  padding: 0.5%;
+  width: 99%;
   text-align: center;
-  color:rgba(255,255,255,0.9);
+  color: rgba(255, 255, 255, 0.9);
   font-family: monospace;
 }
-.logo{
-  margin-right:7px;
+.logo {
+  margin-right: 7px;
+}
+@media only screen and (max-width: 600px) {
+  html,
+  body {
+    background: url("./xobackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: fixed;
+  }
+  .game {
+    height: 100%;
+  }
+  .nav-bar {
+    width: 100%;
+    padding: 3%;
+  }
+  .content {
+    margin-top: 5%;
+    display: initial;
+  }
+  .game-board {
+    margin-top: 10%;
+    display: block;
+    width: 100%;
+  }
+  .square {
+    border: 1px solid rgb(255, 255, 255, 0.5);
+    float: left;
+    font-size: 70px;
+    font-weight: bold;
+    line-height: 34px;
+    padding: 0;
+    text-align: center;
+    height: 90px;
+    width: 90px;
+    margin: 2%;
+    border-radius: 5px;
+    color: white;
+  }
+  .game-info {
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+  }
+  .status {
+    width: 100%;
+    font-size: 35px;
+    border-radius: 0;
+  }
+  .jumpButton {
+    font-size: 15px;
+    padding: 2%;
+    height: 50px;
+    width: 200px;
+    border-radius: 30px;
+    margin-bottom: 2%;
+  }
+  .winner {
+    margin-bottom: 10%;
+    border: 0;
+    background: transparent;
+  }
 }
